@@ -1,0 +1,20 @@
+# 아무 내용도 없으면 로드되지 않는다.
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:testdb;MODE=LEGACY
+    username: sa
+    password: '{cipher}AQAFSAN7oRJVIyQYIhevPqCCYXVePmV0PW/s9WkLiRakkb/KFcQBilfWrkmdEb5sJo76B4y8N4azIcTe3cppn0oXlLa9tZI1Yz+o4xhiPrFTyzddxjfq4No2j/7H8wD5u9LBeIMG0rdlUGq26kZZZoAOHZF4SY+3cvys9lg5Hc8bewbVCDICAeWUy1mmgneryn9E3iHtrMKGOUhKD+iEbDRothji02cBS/LlTh5KdBpyjcn3/u3xmcAAPGmZWk4iFTGhEtBy8PzVgoXvHSHU579PYfkpYZbPP8B/DzIMr2yghVU3mET1NfVxeSDfsBX/Ut34Bff9/1s0jxiZfk7E87TC5E2fLoTCwsewXJN+zL5smVQnRHRiN9egho5woO/S1+Q='
+
+token:
+  expiration_time: 86400000
+  secret: '{cipher}AQAp7Fg2cQ6h71RZcY+e3Kyxm4Pox3uiqRu2Kl9UJcsrft6IHYWJQ8mmCT8Ed8e8wrNNjBcchdElGaVsqJiiUMwN2eIs8yhPOoVxIq1aqiZWOwDKVsvo1lz4QAGKNchfPtPTT1n8jG86WeTJjG7vo6NmAa2LlmVu6V7/WjouQmc2JF8Oc92SvuwgRtUj1tD6XxvOdKPLAg+d10KpR7MBlbbvKfJOUjFqgxavVraPjA9R3tQb4qyCRPIRckyEd+sQoaHE2NNfKILVYWkXDyxpPFdgML4rVOs571SwkRPi9JhdxvhIP+C/PoHt1bld0ehI5GYvQBPqqZ/tvrNag8hW3AMIqCFs78SzR/WFYANevWXzIq9Ym5x+8eabQPC3SeeizIReAHFJ2ZUbetBrco67ljcs'
+  #user_token_native_user_service_default
+
+gateway:
+  ip: 172.18.0.4
+
+order_service:
+  url: http://ORDER-SERVICE/order-service/%s/orders
+  exception:
+    order_is_empty: User's order is empty.
